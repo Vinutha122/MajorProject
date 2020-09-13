@@ -33,3 +33,10 @@ def off(bot,update):
     bot.send_photo(chat_id,pic)
     value = Data(value=0)
     value_send = aio.create_data('lit',value)
+
+u = Updater('1149440840:AAEQaJBQjgcA3OnQxA3-x7kZQjuoxYqtBAQ')  #change the token
+dp = u.dispatcher
+dp.add_handler(CommandHandler('on',on))
+dp.add_handler(CommandHandler('off',off))
+u.start_polling()
+u.idle()
